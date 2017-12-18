@@ -1,19 +1,20 @@
-var express = require('express');
-var app = express();
+let express = require('express');
+let app = express();
 
-var port = process.env.PORT || 8080;
+let port = process.env.PORT || 8080;
 
 app.use(express.static('public'))
 
-app.get('/test/', function (req, res) {  
+app.get('/test/', (req, res) => {  
     res.send(`Hello World!`);
 });
 
-app.get('/', function (req, res) {  
+app.get('/', (req, res) => {  
     res.sendFile(`index.html`, {root: __dirname});
 });
 
 
-app.listen(port, function () {
+app.listen(port, () => {
   console.log('app listening on port:', port);
 });
+    
